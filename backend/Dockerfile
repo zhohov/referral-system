@@ -10,9 +10,6 @@ RUN poetry install --no-root
 
 COPY . /backend/
 
-RUN poetry run python src/manage.py makemigrations
-RUN poetry run python src/manage.py migrate --no-input
-
 EXPOSE 8000
 
 CMD poetry run python src/manage.py makemigrations && \
